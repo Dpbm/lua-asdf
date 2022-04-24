@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 list_all_versions() {
   curl https://www.lua.org/ftp/ | grep -Po "(lua-)(.*?)(.tar.gz)" | sort --unique | sed -r "s/.tar.gz//"
 }
-
-
-set -euo pipefail
 
 current_script_path=${BASH_SOURCE[0]}
 plugin_dir=$(dirname "$(dirname "$current_script_path")")
