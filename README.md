@@ -1,60 +1,50 @@
-<div align="center">
+# Lua - ASDF
 
-# asdf-<YOUR TOOL> [![Build](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml) [![Lint](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml)
-
-
-[<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
+A plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
-# Contents
-
-- [Dependencies](#dependencies)
-- [Install](#install)
-- [Why?](#why)
-- [Contributing](#contributing)
-- [License](#license)
 
 # Dependencies
 
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+To install this plugin you need the follow:
+
+- `bash`
+- [curl](https://curl.se/)
+- `tar`
+- [make](https://www.gnu.org/software/make/)
+- [gcc](https://gcc.gnu.org/)
+
 
 # Install
 
 Plugin:
 
 ```shell
-asdf plugin add <YOUR TOOL>
-# or
-asdf plugin add <YOUR TOOL> https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>.git
+asdf plugin add lua https://github.com/Dpbm/lua-asdf.git
 ```
 
-<YOUR TOOL>:
 
 ```shell
 # Show all installable versions
-asdf list-all <YOUR TOOL>
+asdf list-all lua
 
 # Install specific version
-asdf install <YOUR TOOL> latest
+asdf install lua `version`
 
-# Set a version globally (on your ~/.tool-versions file)
-asdf global <YOUR TOOL> latest
+# Set a version globally
+asdf global lua `version`
 
-# Now <YOUR TOOL> commands are available
-<TOOL CHECK>
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
-# Contributing
-
-Contributions of any kind welcome! See the [contributing guide](contributing.md).
-
-[Thanks goes to these contributors](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/graphs/contributors)!
 
 # License
 
-See [LICENSE](LICENSE) © [<YOUR NAME>](https://github.com/<YOUR GITHUB USERNAME>/)
+See [LICENSE](LICENSE) © [Dpbm](https://github.com/Dpbm/)
+
+
+
+### Made with 🥰 by [Dpbm](https://github.com/Dpbm)
