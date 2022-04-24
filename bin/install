@@ -20,9 +20,11 @@ install_version() {
     mkdir -p "$install_path"
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-    echo "$install_path"
+    pwd
 
     test -e "$install_path/Makefile" || fail "$install_path/Makefile need to exists."
+
+
 
     make all test
 
