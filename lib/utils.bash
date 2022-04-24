@@ -10,7 +10,7 @@ fail() {
 curl_opts=(-fsSL)
 
 list_all_versions() {
-  curl https://www.lua.org/ftp/ | grep -Po "(lua-)(([0-9].)+)(tar.gz)" | sort --unique | sed -r "s/.tar.gz//"
+  curl https://www.lua.org/ftp/ | grep -Po "(lua-)(.*?)(.tar.gz)" | sort --unique | sed -r "s/.tar.gz//"
 }
 
 download_release() {
@@ -18,8 +18,7 @@ download_release() {
   version="$1"
   filename="$2"
 
-  # TODO: Adapt the release URL convention for <YOUR TOOL>
-  url="$GH_REPO/archive/v${version}.tar.gz"
+  url="https://www.lua.org/ftp/lua-${version}.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
