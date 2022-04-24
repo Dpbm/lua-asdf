@@ -2,10 +2,8 @@
 
 set -euo pipefail
 
-TOOL_NAME="lua"
-
 fail() {
-  echo -e "asdf-$TOOL_NAME: $*"
+  echo -e "asdf-lua: $*"
   exit 1
 }
 
@@ -15,7 +13,7 @@ install_version() {
   local install_path="$3"
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-$TOOL_NAME supports release installs only"
+    fail "asdf-lua supports release installs only"
   fi
 
   (
@@ -26,10 +24,10 @@ install_version() {
 
     make all test
 
-    echo "$TOOL_NAME $version installation was successful!"
+    echo "lua $version installation was successful!"
   ) || (
     rm -rf "$install_path"
-    fail "An error ocurred while installing $TOOL_NAME $version."
+    fail "An error ocurred while installing lua $version."
   )
 }
 

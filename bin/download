@@ -2,10 +2,8 @@
 
 set -euo pipefail
 
-TOOL_NAME="lua"
-
 fail() {
-  echo -e "asdf-$TOOL_NAME: $*"
+  echo -e "asdf-lua: $*"
   exit 1
 }
 
@@ -16,7 +14,7 @@ download_release() {
 
   url="https://www.lua.org/ftp/lua-${version}.tar.gz"
 
-  echo "* Downloading $TOOL_NAME release $version..."
+  echo "* Downloading lua release $version..."
   curl -fsSL -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
@@ -27,7 +25,7 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
+release_file="$ASDF_DOWNLOAD_PATH/lua-$ASDF_INSTALL_VERSION.tar.gz"
 
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
