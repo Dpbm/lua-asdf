@@ -10,7 +10,7 @@ fail() {
 curl_opts=(-fsSL)
 
 list_all_versions() {
-  curl https://www.lua.org/ftp/ | grep -Po "(lua-)(.*?)(.tar.gz)" | sort --unique | sed -r "s/.tar.gz//"
+  echo curl https://www.lua.org/ftp/ | grep -Po "(lua-)(.*?)(.tar.gz)" | sort --unique | sed -r "s/.tar.gz//"
 }
 
 download_release() {
