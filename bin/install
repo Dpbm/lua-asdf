@@ -24,11 +24,11 @@ install_version() {
 
     cd $install_path
 
-    make all test
+    make all test || fail "An error ocurred while installing lua $version."
 
     mkdir "$install_path/bin"
 
-    cp -t "$install_path/bin" "$install_path/src/lua" "$install_path/src/luac"
+    cp -t "$install_path/bin" "$install_path/src/lua" "$install_path/src/luac"|| fail "An error ocurred while installing lua $version. Please to finish it, create a path /bin in $install_path, if it not exists, and add lua and luac to this folder, who are in $install_path/src"
 
     echo "lua $version installation was successful!"
   ) || (
