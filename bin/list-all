@@ -10,4 +10,4 @@ set -euo pipefail
 current_script_path=${BASH_SOURCE[0]}
 plugin_dir=$(dirname "$(dirname "$current_script_path")")
 
-list_all_versions
+echo `list_all_versions`

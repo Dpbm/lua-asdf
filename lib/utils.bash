@@ -9,7 +9,6 @@ fail() {
 
 curl_opts=(-fsSL)
 
-
 download_release() {
   local version filename url
   version="$1"
