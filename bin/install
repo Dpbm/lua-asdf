@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+TOOL_NAME="lua"
+
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
   exit 1
