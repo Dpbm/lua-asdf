@@ -28,10 +28,7 @@ install_version() {
 
     mkdir "$install_path/bin"
 
-    pwd
-    ls -la
-
-    cp -t "$install_path/bin" lua luac
+    cp -t "$install_path/bin" "$install_path/src/lua" "$install_path/src/luac"
 
     echo "lua $version installation was successful!"
   ) || (
